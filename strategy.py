@@ -1,4 +1,5 @@
 from strategies.explore import ExploreStrategy
+from strategies.findBase import FindBase
 
 
 class UnitStrategyFactory:
@@ -8,7 +9,7 @@ class UnitStrategyFactory:
 
     def build_strategy(self, unit, game_map, unit_manager):
         if unit.is_mobile():
-            return self.build_explore_strategy(game_map, unit, unit_manager)
+            return self.build_find_base(game_map, unit, unit_manager)
         else:
             return None
 
@@ -16,6 +17,9 @@ class UnitStrategyFactory:
     def build_explore_strategy(game_map, unit, unit_manager):
         return ExploreStrategy(game_map, unit, unit_manager)
 
+    @staticmethod
+    def build_find_base(game_map, unit, unit_manager):
+        return FindBase(game_map, unit, unit_manager)
 
 class AIStrategy:
     def __init__(self, unit_manager, game_map):

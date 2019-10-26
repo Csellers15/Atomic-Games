@@ -1,4 +1,4 @@
-from directions import random_direction
+from directions import random_direction,north
 from communication import build_move_command
 
 
@@ -10,5 +10,5 @@ class ExploreStrategy:
 
 
     def build_command(self, unit):
-        direction = random_direction()
+        direction = north()
         return build_move_command(unit, direction)

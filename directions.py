@@ -16,10 +16,8 @@ turn_map = {
 def turn(direction):
     return turn_map[direction]
 
-
 def random_direction():
     return random.choice(list(Direction))
-
 
 def cardinal_direction(location, destination):
     if destination.y < location.y:
@@ -30,3 +28,16 @@ def cardinal_direction(location, destination):
         return Direction.EAST
     else:
         return Direction.WEST
+
+
+def north():
+ return Direction.NORTH
+
+def south():
+    return Direction.SOUTH
+
+def east():
+    return Direction.EAST
+
+def west():
+    return Direction.WEST
